@@ -28,8 +28,8 @@ git add .
 
 # 获取提交信息
 if [ -z "$1" ]; then
-    # 如果没有提供参数，使用默认信息
-    COMMIT_MSG="Update blog: $(date '+%Y-%m-%d %H:%M:%S')"
+    # 如果没有提供参数，使用默认信息（东八区时间）
+    COMMIT_MSG="Update blog: $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
 else
     # 使用用户提供的信息
     COMMIT_MSG="$1"
