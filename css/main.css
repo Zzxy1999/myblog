@@ -1183,7 +1183,7 @@ pre code {
 }
 @media (max-width: 991px) {
   .sidebar {
-    right: -320px;
+    right: -360px;
   }
   .sidebar-active .sidebar {
     right: 0;
@@ -1198,7 +1198,7 @@ pre code {
     top: 0;
     transition: 0.2s ease-out;
     transition-property: left, right;
-    width: 320px;
+    width: 360px;
     z-index: 20;
   }
   .sidebar a {
@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #a37fd0;
+    background: #04daff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1438,6 +1438,20 @@ pre code {
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.post-toc .nav .nav-child {
+  --height: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition-property: height, opacity, visibility;
+  transition: 0.2s ease-in-out;
+  visibility: hidden;
+}
+.post-toc .nav .active > .nav-child {
+  height: var(--height, auto);
+  opacity: 1;
+  visibility: unset;
 }
 .post-toc .nav .active > a {
   border-bottom-color: #fc6423;
@@ -2394,7 +2408,7 @@ header.header {
 .main-inner {
   border-radius: initial;
   box-sizing: border-box;
-  width: calc(100% - 252px);
+  width: calc(100% - 312px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2403,7 +2417,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-right: 252px;
+  padding-right: 312px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2413,7 +2427,7 @@ header.header {
   }
 }
 .column {
-  width: 240px;
+  width: 300px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2675,4 +2689,14 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+.post-toc {
+  font-size: 17px !important;
+}
+.post-toc .nav-item {
+  line-height: 2.2 !important;
+  font-size: 17px !important;
+}
+.post-toc a {
+  font-size: 17px !important;
 }
