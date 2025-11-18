@@ -29,7 +29,7 @@ custom_file_path:
   #bodyEnd: source/_data/body-end.njk
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -128,9 +128,9 @@ sidebar:
 
   # Sidebar width.
   # Applicable to Muse | Mist and mobile of Pisces | Gemini.
-  width_expanded: 320
+  width_expanded: 360
   # Applicable to desktop of Pisces | Gemini.
-  width_dual_column: 240
+  width_dual_column: 300
 
   # Sidebar display.
   # Applicable to Muse | Mist and mobile of Pisces | Gemini.
@@ -196,7 +196,7 @@ toc:
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: true
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: true
+  expand_all: false
   # Maximum heading depth of generated toc.
   max_depth: 4
 
