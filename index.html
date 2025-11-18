@@ -93,7 +93,58 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h1><h2 id="选项说明"><a href="#选项说明" class="headerlink" title="选项说明"></a>选项说明</h2><ul>
+        <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#netstat">netstat</a><ul>
+<li><a href="#xuan-xiang-shuo-ming">选项说明</a></li>
+<li><a href="#shi-yong-ming-ling">实用命令</a><ul>
+<li><a href="#cha-kan-suo-you-jian-ting-duan-kou">查看所有监听端口</a></li>
+<li><a href="#cha-kan-zhi-ding-duan-kou-zhan-yong">查看指定端口占用</a></li>
+<li><a href="#cha-kan-suo-you-tcp-lian-jie-zhuang-tai">查看所有 TCP 连接状态</a></li>
+<li><a href="#tong-ji-lian-jie-zhuang-tai-shu-liang">统计连接状态数量</a></li>
+<li><a href="#cha-kan-lu-you-biao">查看路由表</a></li>
+<li><a href="#chi-xu-jian-kong-wang-luo-lian-jie">持续监控网络连接</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tcpdump">tcpdump</a><ul>
+<li><a href="#xuan-xiang-shuo-ming-1">选项说明</a></li>
+<li><a href="#guo-lu-biao-da-shi">过滤表达式</a><ul>
+<li><a href="#xie-yi-guo-lu">协议过滤</a></li>
+<li><a href="#zhu-ji-guo-lu">主机过滤</a></li>
+<li><a href="#duan-kou-guo-lu">端口过滤</a></li>
+<li><a href="#luo-ji-yun-suan-fu">逻辑运算符</a></li>
+</ul>
+</li>
+<li><a href="#shi-yong-ming-ling-1">实用命令</a><ul>
+<li><a href="#bu-huo-zhi-ding-jie-kou-de-suo-you-liu-liang">捕获指定接口的所有流量</a></li>
+<li><a href="#bu-huo-zhi-ding-zhu-ji-de-liu-liang">捕获指定主机的流量</a></li>
+<li><a href="#bu-huo-zhi-ding-duan-kou-de-liu-liang">捕获指定端口的流量</a></li>
+<li><a href="#bu-huo-http-liu-liang-dai-xiang-xi-nei-rong">捕获 HTTP 流量（带详细内容）</a></li>
+<li><a href="#bu-huo-https-liu-liang">捕获 HTTPS 流量</a></li>
+<li><a href="#bu-huo-liang-ge-zhu-ji-zhi-jian-de-liu-liang">捕获两个主机之间的流量</a></li>
+<li><a href="#bu-huo-zhi-ding-yuan-ip-he-duan-kou">捕获指定源 IP 和端口</a></li>
+<li><a href="#pai-chu-zhi-ding-duan-kou-ru-ssh">排除指定端口（如 SSH）</a></li>
+<li><a href="#bao-cun-shu-ju-bao-dao-wen-jian">保存数据包到文件</a></li>
+<li><a href="#cong-wen-jian-du-qu-bing-fen-xi">从文件读取并分析</a></li>
+<li><a href="#bu-huo-qian-100-ge-shu-ju-bao">捕获前 100 个数据包</a></li>
+<li><a href="#bu-huo-dns-cha-xun">捕获 DNS 查询</a></li>
+<li><a href="#bu-huo-ping-bao">捕获 ping 包</a></li>
+<li><a href="#cha-kan-wan-zheng-shu-ju-bao-nei-rong-shi-liu-jin-zhi-ascii">查看完整数据包内容（十六进制+ASCII）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h1><span id="netstat">netstat</span><a href="#netstat" class="header-anchor">#</a></h1><h2><span id="xuan-xiang-shuo-ming">选项说明</span><a href="#xuan-xiang-shuo-ming" class="header-anchor">#</a></h2><ul>
 <li><code>-a</code>: 显示所有连接和监听端口</li>
 <li><code>-t</code>: 显示 TCP 连接</li>
 <li><code>-u</code>: 显示 UDP 连接</li>
@@ -105,19 +156,19 @@
 <li><code>-s</code>: 显示各协议的统计信息</li>
 <li><code>-c</code>: 持续输出，每秒刷新一次</li>
 </ul>
-<h2 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h2><h3 id="查看所有监听端口"><a href="#查看所有监听端口" class="headerlink" title="查看所有监听端口"></a>查看所有监听端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulpn | grep LISTEN</span><br></pre></td></tr></table></figure>
+<h2><span id="shi-yong-ming-ling">实用命令</span><a href="#shi-yong-ming-ling" class="header-anchor">#</a></h2><h3><span id="cha-kan-suo-you-jian-ting-duan-kou">查看所有监听端口</span><a href="#cha-kan-suo-you-jian-ting-duan-kou" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulpn | grep LISTEN</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看指定端口占用"><a href="#查看指定端口占用" class="headerlink" title="查看指定端口占用"></a>查看指定端口占用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulpn | grep :4000</span><br></pre></td></tr></table></figure>
+<h3><span id="cha-kan-zhi-ding-duan-kou-zhan-yong">查看指定端口占用</span><a href="#cha-kan-zhi-ding-duan-kou-zhan-yong" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulpn | grep :4000</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看所有-TCP-连接状态"><a href="#查看所有-TCP-连接状态" class="headerlink" title="查看所有 TCP 连接状态"></a>查看所有 TCP 连接状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant</span><br></pre></td></tr></table></figure>
+<h3><span id="cha-kan-suo-you-tcp-lian-jie-zhuang-tai">查看所有 TCP 连接状态</span><a href="#cha-kan-suo-you-tcp-lian-jie-zhuang-tai" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant</span><br></pre></td></tr></table></figure>
 
-<h3 id="统计连接状态数量"><a href="#统计连接状态数量" class="headerlink" title="统计连接状态数量"></a>统计连接状态数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant | awk <span class="string">&#x27;&#123;print $6&#125;&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -rn</span><br></pre></td></tr></table></figure>
+<h3><span id="tong-ji-lian-jie-zhuang-tai-shu-liang">统计连接状态数量</span><a href="#tong-ji-lian-jie-zhuang-tai-shu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ant | awk <span class="string">&#x27;&#123;print $6&#125;&#x27;</span> | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c | <span class="built_in">sort</span> -rn</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -rn</span><br></pre></td></tr></table></figure>
+<h3><span id="cha-kan-lu-you-biao">查看路由表</span><a href="#cha-kan-lu-you-biao" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -rn</span><br></pre></td></tr></table></figure>
 
-<h3 id="持续监控网络连接"><a href="#持续监控网络连接" class="headerlink" title="持续监控网络连接"></a>持续监控网络连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -c</span><br></pre></td></tr></table></figure>
+<h3><span id="chi-xu-jian-kong-wang-luo-lian-jie">持续监控网络连接</span><a href="#chi-xu-jian-kong-wang-luo-lian-jie" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -c</span><br></pre></td></tr></table></figure>
 
-<h1 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h1><h2 id="选项说明-1"><a href="#选项说明-1" class="headerlink" title="选项说明"></a>选项说明</h2><ul>
+<h1><span id="tcpdump">tcpdump</span><a href="#tcpdump" class="header-anchor">#</a></h1><h2><span id="xuan-xiang-shuo-ming">选项说明</span><a href="#xuan-xiang-shuo-ming" class="header-anchor">#</a></h2><ul>
 <li><code>-i</code>: 指定网络接口（如 eth0, any）</li>
 <li><code>-n</code>: 不解析主机名和端口名</li>
 <li><code>-nn</code>: 不解析主机名和协议名</li>
@@ -130,58 +181,58 @@
 <li><code>-s</code>: 捕获数据包的长度（0 表示完整包）</li>
 <li><code>-D</code>: 列出所有可用的网络接口</li>
 </ul>
-<h2 id="过滤表达式"><a href="#过滤表达式" class="headerlink" title="过滤表达式"></a>过滤表达式</h2><h3 id="协议过滤"><a href="#协议过滤" class="headerlink" title="协议过滤"></a>协议过滤</h3><ul>
+<h2><span id="guo-lu-biao-da-shi">过滤表达式</span><a href="#guo-lu-biao-da-shi" class="header-anchor">#</a></h2><h3><span id="xie-yi-guo-lu">协议过滤</span><a href="#xie-yi-guo-lu" class="header-anchor">#</a></h3><ul>
 <li><code>tcp</code>: 仅捕获 TCP 数据包</li>
 <li><code>udp</code>: 仅捕获 UDP 数据包</li>
 <li><code>icmp</code>: 仅捕获 ICMP 数据包</li>
 </ul>
-<h3 id="主机过滤"><a href="#主机过滤" class="headerlink" title="主机过滤"></a>主机过滤</h3><ul>
+<h3><span id="zhu-ji-guo-lu">主机过滤</span><a href="#zhu-ji-guo-lu" class="header-anchor">#</a></h3><ul>
 <li><code>host &lt;IP&gt;</code>: 指定主机</li>
 <li><code>src host &lt;IP&gt;</code>: 源主机</li>
 <li><code>dst host &lt;IP&gt;</code>: 目标主机</li>
 </ul>
-<h3 id="端口过滤"><a href="#端口过滤" class="headerlink" title="端口过滤"></a>端口过滤</h3><ul>
+<h3><span id="duan-kou-guo-lu">端口过滤</span><a href="#duan-kou-guo-lu" class="header-anchor">#</a></h3><ul>
 <li><code>port &lt;端口&gt;</code>: 指定端口</li>
 <li><code>src port &lt;端口&gt;</code>: 源端口</li>
 <li><code>dst port &lt;端口&gt;</code>: 目标端口</li>
 <li><code>portrange &lt;起始-结束&gt;</code>: 端口范围</li>
 </ul>
-<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><ul>
+<h3><span id="luo-ji-yun-suan-fu">逻辑运算符</span><a href="#luo-ji-yun-suan-fu" class="header-anchor">#</a></h3><ul>
 <li><code>and</code> 或 <code>&amp;&amp;</code>: 与</li>
 <li><code>or</code> 或 <code>||</code>: 或</li>
 <li><code>not</code> 或 <code>!</code>: 非</li>
 </ul>
-<h2 id="实用命令-1"><a href="#实用命令-1" class="headerlink" title="实用命令"></a>实用命令</h2><h3 id="捕获指定接口的所有流量"><a href="#捕获指定接口的所有流量" class="headerlink" title="捕获指定接口的所有流量"></a>捕获指定接口的所有流量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0</span><br></pre></td></tr></table></figure>
+<h2><span id="shi-yong-ming-ling">实用命令</span><a href="#shi-yong-ming-ling" class="header-anchor">#</a></h2><h3><span id="bu-huo-zhi-ding-jie-kou-de-suo-you-liu-liang">捕获指定接口的所有流量</span><a href="#bu-huo-zhi-ding-jie-kou-de-suo-you-liu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获指定主机的流量"><a href="#捕获指定主机的流量" class="headerlink" title="捕获指定主机的流量"></a>捕获指定主机的流量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 192.168.1.100</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-zhi-ding-zhu-ji-de-liu-liang">捕获指定主机的流量</span><a href="#bu-huo-zhi-ding-zhu-ji-de-liu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 192.168.1.100</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获指定端口的流量"><a href="#捕获指定端口的流量" class="headerlink" title="捕获指定端口的流量"></a>捕获指定端口的流量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump port 80</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-zhi-ding-duan-kou-de-liu-liang">捕获指定端口的流量</span><a href="#bu-huo-zhi-ding-duan-kou-de-liu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump port 80</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获-HTTP-流量（带详细内容）"><a href="#捕获-HTTP-流量（带详细内容）" class="headerlink" title="捕获 HTTP 流量（带详细内容）"></a>捕获 HTTP 流量（带详细内容）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any -A -s 0 <span class="string">&#x27;tcp port 80&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-http-liu-liang-dai-xiang-xi-nei-rong">捕获 HTTP 流量（带详细内容）</span><a href="#bu-huo-http-liu-liang-dai-xiang-xi-nei-rong" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any -A -s 0 <span class="string">&#x27;tcp port 80&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获-HTTPS-流量"><a href="#捕获-HTTPS-流量" class="headerlink" title="捕获 HTTPS 流量"></a>捕获 HTTPS 流量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any port 443</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-https-liu-liang">捕获 HTTPS 流量</span><a href="#bu-huo-https-liu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any port 443</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获两个主机之间的流量"><a href="#捕获两个主机之间的流量" class="headerlink" title="捕获两个主机之间的流量"></a>捕获两个主机之间的流量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 192.168.1.100 and host 192.168.1.200</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-liang-ge-zhu-ji-zhi-jian-de-liu-liang">捕获两个主机之间的流量</span><a href="#bu-huo-liang-ge-zhu-ji-zhi-jian-de-liu-liang" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 192.168.1.100 and host 192.168.1.200</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获指定源-IP-和端口"><a href="#捕获指定源-IP-和端口" class="headerlink" title="捕获指定源 IP 和端口"></a>捕获指定源 IP 和端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump src host 192.168.1.100 and src port 8080</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-zhi-ding-yuan-ip-he-duan-kou">捕获指定源 IP 和端口</span><a href="#bu-huo-zhi-ding-yuan-ip-he-duan-kou" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump src host 192.168.1.100 and src port 8080</span><br></pre></td></tr></table></figure>
 
-<h3 id="排除指定端口（如-SSH）"><a href="#排除指定端口（如-SSH）" class="headerlink" title="排除指定端口（如 SSH）"></a>排除指定端口（如 SSH）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump port not 22</span><br></pre></td></tr></table></figure>
+<h3><span id="pai-chu-zhi-ding-duan-kou-ru-ssh">排除指定端口（如 SSH）</span><a href="#pai-chu-zhi-ding-duan-kou-ru-ssh" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump port not 22</span><br></pre></td></tr></table></figure>
 
-<h3 id="保存数据包到文件"><a href="#保存数据包到文件" class="headerlink" title="保存数据包到文件"></a>保存数据包到文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 -w capture.pcap</span><br></pre></td></tr></table></figure>
+<h3><span id="bao-cun-shu-ju-bao-dao-wen-jian">保存数据包到文件</span><a href="#bao-cun-shu-ju-bao-dao-wen-jian" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 -w capture.pcap</span><br></pre></td></tr></table></figure>
 
-<h3 id="从文件读取并分析"><a href="#从文件读取并分析" class="headerlink" title="从文件读取并分析"></a>从文件读取并分析</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -r capture.pcap</span><br></pre></td></tr></table></figure>
+<h3><span id="cong-wen-jian-du-qu-bing-fen-xi">从文件读取并分析</span><a href="#cong-wen-jian-du-qu-bing-fen-xi" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -r capture.pcap</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获前-100-个数据包"><a href="#捕获前-100-个数据包" class="headerlink" title="捕获前 100 个数据包"></a>捕获前 100 个数据包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -c 100 -i eth0</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-qian-100-ge-shu-ju-bao">捕获前 100 个数据包</span><a href="#bu-huo-qian-100-ge-shu-ju-bao" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -c 100 -i eth0</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获-DNS-查询"><a href="#捕获-DNS-查询" class="headerlink" title="捕获 DNS 查询"></a>捕获 DNS 查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any port 53</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-dns-cha-xun">捕获 DNS 查询</span><a href="#bu-huo-dns-cha-xun" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any port 53</span><br></pre></td></tr></table></figure>
 
-<h3 id="捕获-ping-包"><a href="#捕获-ping-包" class="headerlink" title="捕获 ping 包"></a>捕获 ping 包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump icmp</span><br></pre></td></tr></table></figure>
+<h3><span id="bu-huo-ping-bao">捕获 ping 包</span><a href="#bu-huo-ping-bao" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump icmp</span><br></pre></td></tr></table></figure>
 
-<h3 id="查看完整数据包内容（十六进制-ASCII）"><a href="#查看完整数据包内容（十六进制-ASCII）" class="headerlink" title="查看完整数据包内容（十六进制+ASCII）"></a>查看完整数据包内容（十六进制+ASCII）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any -X -c 10</span><br></pre></td></tr></table></figure>
+<h3><span id="cha-kan-wan-zheng-shu-ju-bao-nei-rong-shi-liu-jin-zhi-ascii">查看完整数据包内容（十六进制+ASCII）</span><a href="#cha-kan-wan-zheng-shu-ju-bao-nei-rong-shi-liu-jin-zhi-ascii" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i any -X -c 10</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zzxy1999.github.io/myblog/2025/11/11/%E9%80%9F%E6%9F%A5/" data-id="cuidBG_UYUoriAsOuJeP9eyQE" data-title="速查" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://zzxy1999.github.io/myblog/2025/11/11/%E9%80%9F%E6%9F%A5/" data-id="cuidfau9eIWFwBSPyNSZZ6y6K" data-title="速查" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
